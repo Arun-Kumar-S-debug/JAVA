@@ -15,9 +15,10 @@ class CashPayment extends payment{
 }
 class polymorphism{
 	public static void main(String args[]){
-		payment obj1=new CreditCardPayment();
+		payment obj1;
+		obj1=new CreditCardPayment();
 		obj1.pay(325.23);
-		payment obj2=new CashPayment();
-		obj2.pay(234.54);
+		obj1=new CashPayment();
+		obj1.pay(234.54);
 	}
 }
