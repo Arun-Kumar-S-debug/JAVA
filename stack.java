@@ -1,18 +1,19 @@
 import java.util.Scanner;
 class node{
-	Integer data=null;
+	String data=null;
 	node next=null;
 }
 
 class stack_operation{
 	node temp=null;
-	void push(int x){
+	void push(String x){
 		node stack=new node();
 		stack.data=x;
 		stack.next=temp;
 		temp=stack;
 	}
 	void display(){
+		System.out.println("The stack elements are given below,");
 		node v=temp;
 		while(v!=null){
 			System.out.println(v.data);
@@ -20,7 +21,7 @@ class stack_operation{
 		}
 	}
 	void peek(){
-		System.out.println(temp.data);
+		System.out.println("The peeked element is "+temp.data);
 	}
 	void Size(){
 		node v=temp;
@@ -81,14 +82,13 @@ class stack{
 			if (operation_no==1){
 				boolean i=true;
 				while(i==true){
-				System.out.println("Enter the value to insert into stack (or) 7 to end the operation:");
-				int val=input.nextInt();
-				if (val!=7){
-					obj1.push(val);
-				}else {
-					i=false;
-				}
-
+				System.out.println("Enter the value to insert into stack (or) end to end the operation:");
+				String val=input.nextLine();
+					if (val.equalsIgnoreCase("end")){
+						i=false;
+					}else {
+						obj1.push(val);
+					}
 				}
 			}
 			else if (operation_no==2){
